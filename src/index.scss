@@ -1,0 +1,10 @@
+@use "./styles/imports/components";
+@use "./styles/imports/container";
+@use "./styles/imports/generic";
+@use "./styles/imports/settings";
+@use "./styles/imports/tools";
+
+body {
+  background-image: url("https://cdn.pixabay.com/photo/2024/05/31/06/55/ai-generated-8799954_1280.png");
+  background-size: cover;
+}
