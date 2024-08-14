@@ -1,0 +1,46 @@
+@use "../imports/tools" as *;
+@use "../imports/settings" as *;
+
+.astronomy {
+  @include customFlex(column, nowrap, normal, normal);
+  gap: 1.5rem;
+  padding: 2rem;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  &__title {
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: "Nasalization Rg", sans-serif;
+  }
+
+  &__media {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 1rem;
+    max-width: 40rem;
+    margin: auto;
+  }
+
+  &__footer {
+    @include customFlex(row, wrap, space-between, center);
+    gap: 0.5rem;
+    color: $main;
+    font-family: "Nasalization Rg", sans-serif;
+
+    &-copyright {
+      @include customFlex(row, nowrap, normal, center);
+      gap: 0.3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .astronomy__footer {
+    justify-content: center;
+  }
+}

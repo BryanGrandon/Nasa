@@ -1,35 +1,38 @@
 import { useEffect, useState } from "react";
+// Services
+import { getInformation } from "./services/getApiInformation";
+import { KEY } from "./services/constants";
+// Component
 import Header from "./components/container/header";
-
-const getInfo = async (url) => {
-  const key = "rLuQUBaLDvtQsOIoc3wlCUliy6vOLaxzdbKXpyig";
-  const result = await fetch(url + `?api_key=${key}`);
-  const data = await result.json();
-  return data;
-};
+import Title from "./components/title";
+import Astronomy from "./components/astronomy";
 
 function App() {
-  const [info, setInfo] = useState();
+  const [astronomyInfo, setAstronomyInfo] = useState();
 
-  const astronomy = async () => {
+  const astronomyPictureOfTheDay = async () => {
     const url = `https://api.nasa.gov/planetary/apod`;
-    const info = await getInfo(url);
-    setInfo(info);
+    const info = await getInformation(url, KEY);
+    setAstronomyInfo(info);
   };
-  console.log(info);
+  console.log(astronomyInfo);
 
   useEffect(() => {
-    astronomy();
+    astronomyPictureOfTheDay();
   }, []);
 
   return (
     <>
       <main className="bg-shadow default-size">
         <Header />
-        <h1>Astronomy Picture of the Day</h1>
-        {info !== undefined ? <h2>{info.title}</h2> : null}
-        {/* {info !== undefined ? <img src={info.hdurl} alt="" /> : null} */}
-        {info !== undefined ? <p>{info.explanation}</p> : null}
+
+        <article className="article">
+          <Title text="Astronomy Picture of the Day" />
+
+          {astronomyInfo !== undefined ? (
+            <Astronomy json={astronomyInfo} />
+          ) : null}
+        </article>
       </main>
     </>
   );
