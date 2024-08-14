@@ -1,35 +1,34 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useState } from "react";
+
+const getInfo = async (url) => {
+  const key = "rLuQUBaLDvtQsOIoc3wlCUliy6vOLaxzdbKXpyig";
+  const result = await fetch(url + `?api_key=${key}`);
+  const data = await result.json();
+  return data;
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [info, setInfo] = useState();
+
+  const astronomy = async () => {
+    const url = `https://api.nasa.gov/planetary/apod`;
+    const info = await getInfo(url);
+    setInfo(info);
+  };
+  console.log(info);
+
+  useEffect(() => {
+    astronomy();
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Astronomy Picture of the Day</h1>
+      {info !== undefined ? <h2>{info.title}</h2> : null}
+      {info !== undefined ? <img src={info.hdurl} alt="" /> : null}
+      {info !== undefined ? <p>{info.explanation}</p> : null}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
