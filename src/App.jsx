@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 // Services
 import { getInformation } from "./services/getApiInformation";
 import { KEY } from "./services/constants";
@@ -6,6 +6,7 @@ import { KEY } from "./services/constants";
 import Header from "./components/container/header";
 import Title from "./components/title";
 import Astronomy from "./components/astronomy";
+import Loading from "./components/loading";
 
 function App() {
   const [astronomyInfo, setAstronomyInfo] = useState();
@@ -31,7 +32,9 @@ function App() {
 
           {astronomyInfo !== undefined ? (
             <Astronomy json={astronomyInfo} />
-          ) : null}
+          ) : (
+            <Loading />
+          )}
         </article>
       </main>
     </>

@@ -1,0 +1,11 @@
+@use "../imports/tools" as *;
+@use "../imports/settings" as *;
+
+.loading {
+  @include customFlex(row, nowrap, center, center);
+  height: 10rem;
+  width: 10rem;
+  margin: auto;
+  object-fit: contain;
+  padding: 3rem 0;
+}
