@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Header from "./components/container/header";
 
 const getInfo = async (url) => {
   const key = "rLuQUBaLDvtQsOIoc3wlCUliy6vOLaxzdbKXpyig";
@@ -23,10 +24,13 @@ function App() {
 
   return (
     <>
-      <h1>Astronomy Picture of the Day</h1>
-      {info !== undefined ? <h2>{info.title}</h2> : null}
-      {info !== undefined ? <img src={info.hdurl} alt="" /> : null}
-      {info !== undefined ? <p>{info.explanation}</p> : null}
+      <main className="bg-shadow default-size">
+        <Header />
+        <h1>Astronomy Picture of the Day</h1>
+        {info !== undefined ? <h2>{info.title}</h2> : null}
+        {/* {info !== undefined ? <img src={info.hdurl} alt="" /> : null} */}
+        {info !== undefined ? <p>{info.explanation}</p> : null}
+      </main>
     </>
   );
 }

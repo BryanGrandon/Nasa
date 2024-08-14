@@ -1,0 +1,53 @@
+@use "../imports/tools" as *;
+@use "../imports/settings" as *;
+
+.header {
+  @include customFlex(column, nowrap, normal, normal);
+  gap: 1rem;
+  padding: 1rem 0;
+
+  &__nav {
+    @include customFlex(row, nowrap, space-between, center);
+    gap: 1rem;
+
+    &-api {
+      font-size: 1.5rem;
+      font-family: "Nasalization", sans-serif;
+      transition: all 0.5s ease;
+      &:hover {
+        color: $main;
+      }
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Nasalization", sans-serif;
+  }
+
+  &__info {
+    @include customFlex(row, nowrap, space-evenly, center);
+
+    &-description {
+      width: 45rem;
+      font-weight: bold;
+    }
+  }
+}
+
+.btn-link {
+  @include customFlex(row, nowrap, space-between, center);
+  gap: 0.3rem;
+  border-radius: 1rem;
+  padding: 0.2rem 1rem;
+  background-color: $main;
+  font-weight: bold;
+  transition: all 0.5s ease;
+  &:hover {
+    background-color: $secondary;
+  }
+  &:active {
+    box-shadow: 2px 2px 3px $stroke inset;
+  }
+}
