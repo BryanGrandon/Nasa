@@ -26,13 +26,10 @@
     font-family: "Nasalization", sans-serif;
   }
 
-  &__info {
-    @include customFlex(row, nowrap, space-evenly, center);
-
-    &-description {
-      width: 45rem;
-      font-weight: bold;
-    }
+  &__description {
+    width: 45rem;
+    margin: auto;
+    text-align: center;
   }
 }
 

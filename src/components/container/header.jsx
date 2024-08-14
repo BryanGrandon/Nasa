@@ -21,14 +21,12 @@ function Header() {
         </a>
       </section>
       <h1 className="header__title">Nasa</h1>
-      <section className="header__info">
-        <p className="header__info-description">
-          National Aeronautics and Space Administration (NASA) is the government
-          agency that manages the U.S. space program. This organization was
-          founded in 1958 and has been working ever since on the development of
-          technologies and missions aimed at increasing our knowledge of space.
-        </p>
-      </section>
+      <p className="header__description">
+        National Aeronautics and Space Administration (NASA) is the government
+        agency that manages the U.S. space program. This organization was
+        founded in 1958 and has been working ever since on the development of
+        technologies and missions aimed at increasing our knowledge of space.
+      </p>
     </header>
   );
 }
