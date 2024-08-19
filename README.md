@@ -16,8 +16,8 @@ The NASA API provides access to a wide range of data and resources related to sp
 
 ## 📊 Project status
 
-<!-- ✅ Completed -->
+✅ Completed
 
-## 🌐 Website
+## 🌐 [Website](https://bryangrandon.github.io/Nasa/)
 
 <img src="./src/assets/website.png" alt="website" width="900px" />
