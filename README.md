@@ -16,7 +16,7 @@ The NASA API provides access to a wide range of data and resources related to sp
 
 ## 📊 Project status
 
-✅ Completed
+<!-- ✅ Completed -->
 
 ## 🌐 Website
 
