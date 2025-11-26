@@ -1,8 +1,8 @@
 # Nasa
 
-Astronomical Image of the Day: Presents each day a different image or photograph of our fascinating universe, along with a brief explanation written by a professional astronomer.
+NASA is a space-themed website that displays the Astronomical Image of the Day, offering a daily image of the universe accompanied by a brief explanation from an astronomer. With a modern and responsive interface, it invites users to explore cosmic phenomena in a visual and accessible way.
 
-- [NasaAPI.](https://api.nasa.gov/)
+- [API.](https://api.nasa.gov/)
 - [🌐 Website Demo.](https://bryangrandon.github.io/Nasa/)
 
 ## 📚 Technologies Used
@@ -23,7 +23,7 @@ git clone https://github.com/BryanGrandon/Nasa.git
 Access the project folder
 
 ```bash
-cd Color-Palette
+cd Nasa
 ```
 
 Install all the project dependencies with:
